@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# Portal PPID Balai K3 Samarinda
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portal resmi Pejabat Pengelola Informasi dan Dokumentasi (PPID) Balai Keselamatan dan Kesehatan Kerja (K3) Samarinda. Platform ini dirancang untuk memudahkan masyarakat dalam mengakses informasi publik dan mengajukan permohonan informasi secara digital.
 
-Currently, two official plugins are available:
+## ✨ Fitur Utama
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Layanan Informasi Publik**: Akses cepat ke berbagai kategori informasi K3.
+- **Formulir Permohonan Informasi**: Pengajuan permohonan informasi secara online dengan fitur unggah dokumen pendukung dan pratinjau file.
+- **Profil PPID**: Informasi lengkap mengenai struktur, tugas, dan fungsi PPID Balai K3 Samarinda.
+- **Dashboard Statistik**: Visualisasi data layanan informasi yang modern.
+- **Integrasi Chatbot ASTY**: Asisten pintar yang siap membantu menjawab pertanyaan umum seputar layanan.
+- **Desain Responsif**: Tampilan yang optimal di berbagai perangkat (Desktop, Tablet, Mobile).
 
-## React Compiler
+## 🛠️ Teknologi yang Digunakan
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend Framework**: [React.js](https://reactjs.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Bahasa**: [TypeScript](https://www.typescriptlang.org/)
+- **Ikon**: [Lucide React](https://lucide.dev/)
+- **Styling**: Vanilla CSS dengan desain modern (Glassmorphism & Vibrant Gradients)
+- **Deployment**: [Vercel](https://vercel.com/)
 
-## Expanding the ESLint configuration
+## 🚀 Memulai (Local Development)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prasyarat
+- Node.js (versi 18 atau lebih baru)
+- npm atau yarn
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Instalasi
+1. Clone repositori ini:
+   ```bash
+   git clone https://github.com/RafidanAnwar/ppidbk3smd.git
+   ```
+2. Masuk ke direktori proyek:
+   ```bash
+   cd ppidbk3smd
+   ```
+3. Instal dependensi:
+   ```bash
+   npm install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Menjalankan Server Pengembangan
+```bash
+npm run dev
+```
+Akses aplikasi melalui `http://localhost:5173`.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Membangun untuk Produksi
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📂 Struktur Proyek Utama
+- `src/components/`: Komponen UI mandiri (Hero, LayananPublik, PermohonanInformasi, ProfilPPID, dll).
+- `src/App.tsx`: Komponen utama pengatur navigasi dan state aplikasi.
+- `src/App.css`: Pusat pengelolaan gaya desain (styling) global.
+- `public/images/`: Aset gambar dan ilustrasi yang digunakan dalam aplikasi.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+© 2024 Balai K3 Samarinda - PPID Portal.
