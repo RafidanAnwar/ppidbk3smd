@@ -1,0 +1,196 @@
+/* ============================================
+   PPID Website - Global Styles & Design System
+   ============================================ */
+
+:root {
+  /* Colors */
+  --primary: #1061D6;
+  --primary-dark: #0A4BA8;
+  --primary-light: #EBF3FF;
+  --background: #F8FAFC;
+  --card: #FFFFFF;
+  --ornament: #F28D00;
+  --text-primary: #1A1A1A;
+  --text-body: #4D4D4D;
+  --text-light: #6B7280;
+
+  /* Info Card Colors */
+  --card-pink: #FDB2CD;
+  --card-pink-title: #FF8DB7;
+  --card-green: #99DAC3;
+  --card-green-title: #3EA581;
+  --card-orange: #FBB37C;
+  --card-orange-title: #FF770F;
+  --card-red: #F29992;
+  --card-red-title: #E17A73;
+
+  /* Gradient */
+  --gradient-bar: linear-gradient(90deg, #1061D6 34.13%, #78E275 57.69%, #FFFFFF 98.08%);
+  --gradient-hero: linear-gradient(135deg, rgba(16, 97, 214, 0.92) 0%, rgba(10, 60, 140, 0.85) 100%);
+
+  /* Shadows */
+  --shadow-card: 0px 0px 100px -2px rgba(16, 97, 214, 0.14);
+  --shadow-soft: 0px 4px 30px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0px 8px 40px rgba(16, 97, 214, 0.2);
+
+  /* Typography */
+  --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing */
+  --section-padding: 80px 75px;
+  --container-max: 1290px;
+
+  /* Border Radius */
+  --radius-card: 40px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+}
+
+/* ============================================
+   Reset & Base
+   ============================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--background);
+  color: var(--text-body);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+.section-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--section-padding);
+}
+
+.gradient-bar {
+  width: 100%;
+  max-width: 507px;
+  height: 12px;
+  background: var(--gradient-bar);
+  border-radius: 6px;
+}
+
+/* ============================================
+   Scrollbar
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.8s ease-out both;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.8s ease-out both;
+}
