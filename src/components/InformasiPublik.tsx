@@ -29,7 +29,11 @@ const cards = [
   },
 ];
 
-const InformasiPublik = () => {
+interface InformasiPublikProps {
+  onDetailClick?: (title: string) => void;
+}
+
+const InformasiPublik = ({ onDetailClick }: InformasiPublikProps) => {
   return (
     <section className="informasi-section" id="informasi">
       <div className="informasi-header">
@@ -44,7 +48,23 @@ const InformasiPublik = () => {
 
       <div className="informasi-cards">
         {cards.map((card, i) => (
-          <div className="info-card" key={i}>
+          <div 
+            className="info-card cursor-pointer" 
+            key={i}
+            onClick={() => {
+              if (card.title === 'Informasi Setiap Saat') {
+                onDetailClick?.('informasi-setiap-saat');
+              } else if (card.title === 'Informasi Berkala') {
+                onDetailClick?.('informasi-berkala');
+              } else if (card.title === 'Informasi Serta Merta') {
+                onDetailClick?.('informasi-serta-merta');
+              } else if (card.title === 'Informasi Dikecualikan') {
+                onDetailClick?.('informasi-dikecualikan');
+              } else {
+                onDetailClick?.(card.title);
+              }
+            }}
+          >
             <div
               className="info-card-top"
               style={{ 

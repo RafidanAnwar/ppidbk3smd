@@ -70,7 +70,7 @@ const KontakKami = () => {
             <div className="kontak-card-icon">{c.icon}</div>
             <div className="kontak-card-text">
               <h4>{c.title}</h4>
-              <p>{c.content}</p>
+              <div className="kontak-card-content">{c.content}</div>
             </div>
           </div>
         ))}

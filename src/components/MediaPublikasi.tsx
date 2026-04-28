@@ -16,7 +16,11 @@ const articles = [
   },
 ];
 
-const MediaPublikasi = () => {
+interface MediaPublikasiProps {
+  onSeeAllClick?: () => void;
+}
+
+const MediaPublikasi = ({ onSeeAllClick }: MediaPublikasiProps) => {
   return (
     <section className="media-section" id="media">
       <div className="media-header">
@@ -60,7 +64,7 @@ const MediaPublikasi = () => {
       </div>
       
       <div className="media-actions">
-        <button className="btn-lihat-semua">
+        <button className="btn-lihat-semua" onClick={onSeeAllClick}>
           Lihat semua
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5 12H19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
