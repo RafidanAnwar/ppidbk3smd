@@ -1,4 +1,4 @@
-import { useState, useRef, ChangeEvent } from 'react';
+import { useState, useRef, type ChangeEvent } from 'react';
 import { ArrowLeft, Upload, Info, ChevronRight, Check, Trash2, FileText } from 'lucide-react';
 
 interface PermohonanInformasiProps {
