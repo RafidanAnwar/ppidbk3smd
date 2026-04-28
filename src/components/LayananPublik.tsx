@@ -1,3 +1,5 @@
+import React from 'react';
+
 const services = [
   {
     icon: '/images/Desain tanpa judul (29) 1.png',
@@ -21,7 +23,12 @@ const services = [
   },
 ];
 
-const LayananPublik = ({ onPelatihanClick, onPermohonanClick }) => {
+interface LayananPublikProps {
+  onPelatihanClick: () => void;
+  onPermohonanClick: () => void;
+}
+
+const LayananPublik: React.FC<LayananPublikProps> = ({ onPelatihanClick, onPermohonanClick }) => {
   return (
     <section className="layanan-section" id="layanan">
       <div className="layanan-inner">
@@ -32,7 +39,7 @@ const LayananPublik = ({ onPelatihanClick, onPermohonanClick }) => {
             Balai Keselamatan dan Kesehatan Kerja (K3)
             Samarinda menyediakan berbagai layanan di bidang
             keselamatan dan kesehatan kerja yang dapat diakses
-            oleh masyarakat, perusahaan, dan tenaga kerja.
+            oleh masyarakat, perusahaan, and tenaga kerja.
           </p>
           <div className="layanan-icons">
             {services.map((svc, i) => (

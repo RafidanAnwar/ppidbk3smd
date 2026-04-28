@@ -1,6 +1,11 @@
 import React from 'react';
 
-const Hero = ({ onProfilClick }) => {
+interface HeroProps {
+  onProfilClick: () => void;
+  onPermohonanClick: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onProfilClick, onPermohonanClick }) => {
   return (
     <section className="hero-ppid" id="home">
       <div className="hero-ppid-bg" />
@@ -16,9 +21,13 @@ const Hero = ({ onProfilClick }) => {
           K3 Samarinda secara mudah dan cepat.
         </p>
         <div className="hero-ppid-buttons">
-          <a href="#layanan" className="btn-ppid-primary">
+          <button 
+            onClick={onPermohonanClick}
+            className="btn-ppid-primary"
+            style={{ cursor: 'pointer', border: 'none' }}
+          >
             Layanan Informasi Publik
-          </a>
+          </button>
           <button 
             onClick={onProfilClick} 
             className="btn-ppid-secondary"
