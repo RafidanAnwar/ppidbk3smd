@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 
-const Navbar = ({ currentPage, onPageChange }) => {
+interface NavbarProps {
+  currentPage: string;
+  onPageChange: (page: string) => void;
+}
+
+const Navbar = ({ currentPage, onPageChange }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 

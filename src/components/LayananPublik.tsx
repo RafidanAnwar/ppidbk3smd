@@ -1,5 +1,3 @@
-import React from 'react';
-
 const services = [
   {
     icon: '/images/Desain tanpa judul (29) 1.png',
@@ -28,7 +26,7 @@ interface LayananPublikProps {
   onPermohonanClick: () => void;
 }
 
-const LayananPublik: React.FC<LayananPublikProps> = ({ onPelatihanClick, onPermohonanClick }) => {
+const LayananPublik = ({ onPelatihanClick, onPermohonanClick }: LayananPublikProps) => {
   return (
     <section className="layanan-section" id="layanan">
       <div className="layanan-inner">

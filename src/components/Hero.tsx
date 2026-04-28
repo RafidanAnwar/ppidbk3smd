@@ -1,11 +1,9 @@
-import React from 'react';
-
 interface HeroProps {
   onProfilClick: () => void;
   onPermohonanClick: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ onProfilClick, onPermohonanClick }) => {
+const Hero = ({ onProfilClick, onPermohonanClick }: HeroProps) => {
   return (
     <section className="hero-ppid" id="home">
       <div className="hero-ppid-bg" />

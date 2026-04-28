@@ -1,4 +1,3 @@
-import React from 'react';
 import HomeFAQ from './HomeFAQ';
 
 const Pelatihan = () => {

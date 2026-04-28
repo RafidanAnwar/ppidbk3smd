@@ -1,6 +1,8 @@
-import React from 'react';
+interface PelatihanNavbarProps {
+  onPageChange: (page: string) => void;
+}
 
-const PelatihanNavbar = ({ onPageChange }) => {
+const PelatihanNavbar = ({ onPageChange }: PelatihanNavbarProps) => {
   return (
     <nav className="pelatihan-navbar">
       <div className="navbar-container">

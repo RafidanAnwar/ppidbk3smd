@@ -1,11 +1,11 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef, ChangeEvent } from 'react';
 import { ArrowLeft, Upload, Info, ChevronRight, Check, Trash2, FileText } from 'lucide-react';
 
 interface PermohonanInformasiProps {
   onBack: () => void;
 }
 
-const PermohonanInformasi: React.FC<PermohonanInformasiProps> = ({ onBack }) => {
+const PermohonanInformasi = ({ onBack }: PermohonanInformasiProps) => {
   const [formData, setFormData] = useState({
     nama: '',
     telepon: '',
@@ -22,7 +22,7 @@ const PermohonanInformasi: React.FC<PermohonanInformasiProps> = ({ onBack }) => 
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -35,7 +35,7 @@ const PermohonanInformasi: React.FC<PermohonanInformasiProps> = ({ onBack }) => 
     setShowSuccessPopup(true);
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setUploadedFile(e.target.files[0]);
     }

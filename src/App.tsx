@@ -74,7 +74,6 @@ function App() {
       {currentPage === 'profil-ppid' && (
         <>
           <ProfilPPID 
-            onBack={() => setCurrentPage('ppid')} 
             onPermohonanClick={() => setCurrentPage('permohonan-informasi')}
           />
           <Footer />

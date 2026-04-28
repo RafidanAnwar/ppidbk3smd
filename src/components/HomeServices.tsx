@@ -1,4 +1,3 @@
-import React from 'react';
 
 const homeServices = [
   {
@@ -27,7 +26,11 @@ const homeServices = [
   },
 ];
 
-const HomeServices = ({ onPelatihanClick }) => {
+interface HomeServicesProps {
+  onPelatihanClick: () => void;
+}
+
+const HomeServices = ({ onPelatihanClick }: HomeServicesProps) => {
   return (
     <section className="home-services-section" id="layanan">
       <div className="services-header-container">

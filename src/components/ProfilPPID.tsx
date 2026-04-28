@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Check, FileText, ThumbsUp, Info, HelpCircle, Handshake, Folder, MessageSquare, Sliders, ChevronDown, BarChart3, Star, Hourglass, Ban, BookOpen, Send, ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Check, ThumbsUp, Folder, MessageSquare, Sliders, ChevronDown, BarChart3, Star, Hourglass, Ban, BookOpen, Send, ArrowRight } from 'lucide-react';
 
-const Counter = ({ target, duration = 2000 }) => {
+interface CounterProps {
+  target: number;
+  duration?: number;
+}
+
+const Counter = ({ target, duration = 2000 }: CounterProps) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let startTimestamp = null;
-    const step = (timestamp) => {
+    let startTimestamp: number | null = null;
+    const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
       setCount(Math.floor(progress * target));
@@ -21,11 +26,10 @@ const Counter = ({ target, duration = 2000 }) => {
 };
 
 interface ProfilPPIDProps {
-  onBack: () => void;
   onPermohonanClick: () => void;
 }
 
-const ProfilPPID: React.FC<ProfilPPIDProps> = ({ onBack, onPermohonanClick }) => {
+const ProfilPPID = ({ onPermohonanClick }: ProfilPPIDProps) => {
   const [selectedYear, setSelectedYear] = useState('2024');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   return (
