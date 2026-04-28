@@ -115,7 +115,7 @@ function App() {
         <>
           <InformasiSetiapSaat 
             onBack={() => setCurrentPage('ppid')} 
-            onItemClick={(item) => {
+            onItemClick={() => {
               // Navigate to detail view for any item for now
               setCurrentPage('informasi-setiap-saat-detail');
               window.scrollTo(0, 0);
@@ -136,7 +136,7 @@ function App() {
         <>
           <InformasiBerkala 
             onBack={() => setCurrentPage('ppid')} 
-            onItemClick={(item) => {
+            onItemClick={() => {
               setCurrentPage('informasi-berkala-detail');
               window.scrollTo(0, 0);
             }}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Send, User, Calendar, Info, FileText, HelpCircle, Star, Sparkles } from 'lucide-react';
+import { X, Send, User, Calendar, Info, FileText, HelpCircle, Sparkles } from 'lucide-react';
 
 const IMG = 'https://drive.google.com/thumbnail?id=133CvIRz9rnJisqondIB-W8Mye7rnnmAa&sz=w1000';
 

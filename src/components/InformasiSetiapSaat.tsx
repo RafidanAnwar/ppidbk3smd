@@ -1,7 +1,8 @@
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ArrowLeft } from 'lucide-react';
 
 interface InformasiSetiapSaatProps {
-  onBack?: () => void;
+  onBack: () => void;
+  onItemClick: (item: string) => void;
 }
 
 const items = [
@@ -21,6 +22,9 @@ const InformasiSetiapSaat = ({ onBack, onItemClick }: InformasiSetiapSaatProps) 
       <div className="setiap-saat-container">
         {/* Header Breadcrumb-ish */}
         <div className="setiap-saat-header-top animate-fade-in-up">
+           <button className="btn-back-minimal" onClick={onBack} style={{ background: 'none', border: 'none', padding: 0, marginRight: '10px', cursor: 'pointer', color: '#1061D6' }}>
+             <ArrowLeft size={20} />
+           </button>
            <div className="blue-square"></div>
            <span>Informasi Publik</span>
         </div>
@@ -38,8 +42,8 @@ const InformasiSetiapSaat = ({ onBack, onItemClick }: InformasiSetiapSaatProps) 
             <div 
               key={index} 
               className="setiap-saat-item animate-fade-in-up" 
-              style={{ animationDelay: `${index * 0.1}s` }}
-              onClick={() => onItemClick?.(item)}
+              style={{ animationDelay: `${index * 0.1}s`, cursor: 'pointer' }}
+              onClick={() => onItemClick(item)}
             >
               <span className="item-text">{item}</span>
               <button className="item-btn">
